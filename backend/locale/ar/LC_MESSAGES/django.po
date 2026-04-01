@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: grand_theatre_rental\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+msgid "Grand Theatre of Rabat"
+msgstr "المسرح الكبير للرباط"
+
+msgid "Catalogue"
+msgstr "الكتالوج"
+
+msgid "Contact"
+msgstr "اتصل بنا"
+
+msgid "Verify"
+msgstr "التحقق"
+
+msgid "Staff Portal"
+msgstr "بوابة الموظفين"
+
+msgid "Login"
+msgstr "دخول"
+
+msgid "Register"
+msgstr "تسجيل"
+
+msgid "Logout"
+msgstr "خروج"
+
+msgid "Tenant Dashboard"
+msgstr "لوحة المستأجر"
+
+msgid "Browse Catalogue"
+msgstr "تصفح الكتالوج"
+
+msgid "How It Works"
+msgstr "كيف يعمل النظام"
+
+msgid "Featured Items"
+msgstr "مقتنيات مميزة"
+
+msgid "Available"
+msgstr "متاح"
+
+msgid "Unavailable"
+msgstr "غير متاح"
+
+msgid "Filters"
+msgstr "فلاتر"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Theatre Catalogue"
+msgstr "كتالوج المقتنيات"
+
+msgid "Staff Dashboard"
+msgstr "لوحة الموظفين"

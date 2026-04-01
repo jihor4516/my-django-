@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: grand_theatre_rental\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Grand Theatre of Rabat"
+msgstr "Grand Theatre de Rabat"
+
+msgid "Catalogue"
+msgstr "Catalogue"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Verify"
+msgstr "Verification"
+
+msgid "Staff Portal"
+msgstr "Portail du Personnel"
+
+msgid "Login"
+msgstr "Connexion"
+
+msgid "Register"
+msgstr "Inscription"
+
+msgid "Logout"
+msgstr "Deconnexion"
+
+msgid "Tenant Dashboard"
+msgstr "Tableau de Bord Locataire"
+
+msgid "Browse Catalogue"
+msgstr "Parcourir le Catalogue"
+
+msgid "How It Works"
+msgstr "Comment ca Marche"
+
+msgid "Featured Items"
+msgstr "Articles Vedettes"
+
+msgid "Available"
+msgstr "Disponible"
+
+msgid "Unavailable"
+msgstr "Indisponible"
+
+msgid "Filters"
+msgstr "Filtres"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Theatre Catalogue"
+msgstr "Catalogue du Theatre"
+
+msgid "Staff Dashboard"
+msgstr "Tableau de Bord Personnel"

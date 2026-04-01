@@ -1,0 +1,104 @@
+:root {
+  --gold: #B8954A;
+  --gold-light: #D4AF70;
+  --gold-pale: #F5EDD8;
+  --dark: #0C0C10;
+  --dark-2: #141418;
+  --dark-3: #1E1E26;
+  --bg-page: #F8F9FB;
+  --bg-card: #FFFFFF;
+  --sidebar-bg: #111827;
+  --sidebar-active: rgba(184, 149, 74, 0.12);
+  --text-primary: #1A1A16;
+  --text-secondary: #6B7280;
+  --text-inverse: #FFFFFF;
+  --border: #E5E7EB;
+  --border-dark: #374151;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 4px 20px rgba(184, 149, 74, 0.25);
+
+  /* Backward-compatible aliases for existing templates */
+  --gold-primary: var(--gold);
+  --gold-dark: #8E6D2E;
+  --night-deep: var(--dark);
+  --night-mid: var(--dark-2);
+  --night-card: var(--dark-3);
+  --night-border: var(--border-dark);
+  --white-warm: #F7F2E8;
+  --text-muted: var(--text-secondary);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "DM Sans", "Noto Naskh Arabic", sans-serif;
+}
+
+.public-shell {
+  background: radial-gradient(circle at 15% 10%, rgba(184, 149, 74, 0.2), transparent 30%), var(--night-mid);
+  color: var(--white-warm);
+}
+
+.admin-shell {
+  background: var(--bg-page);
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+.hero-title,
+.page-title {
+  font-family: "Cormorant Garamond", "Noto Naskh Arabic", serif;
+}
+
+.lang-switcher-form {
+  margin: 0;
+}
+
+.lang-pills {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-pill {
+  border: 1px solid rgba(212, 175, 112, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--white-warm);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.lang-pill.active,
+.lang-pill:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #101011;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, var(--gold), var(--gold-dark)) 1;
+}
+
+a {
+  color: var(--gold-light);
+}

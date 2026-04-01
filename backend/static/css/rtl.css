@@ -1,0 +1,19 @@
+html[dir="rtl"] body {
+  text-align: right;
+  direction: rtl;
+  font-family: "Noto Naskh Arabic", sans-serif;
+}
+
+html[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+html[dir="rtl"] .lang-pills {
+  direction: ltr;
+}
+
+html[dir="rtl"] .form-label,
+html[dir="rtl"] .page-subtitle,
+html[dir="rtl"] .sidebar-label {
+  letter-spacing: 0;
+}

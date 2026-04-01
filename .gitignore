@@ -1,0 +1,15 @@
+.venv/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+backend/__pycache__/
+backend/apps/**/__pycache__/
+backend/config/__pycache__/
+backend/locale/**/__pycache__/
+backend/db.sqlite3
+backend/media/
+backend/.env
+email-settings.bat
+.DS_Store
+Thumbs.db

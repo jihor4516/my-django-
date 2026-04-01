@@ -1,0 +1,14 @@
+html[dir="ltr"] body {
+  text-align: left;
+  direction: ltr;
+  font-family: "DM Sans", sans-serif;
+}
+
+html[dir="ltr"] .navbar-nav {
+  padding-left: 0;
+}
+
+html[dir="ltr"] .hero-title,
+html[dir="ltr"] .page-title {
+  letter-spacing: 0.2px;
+}

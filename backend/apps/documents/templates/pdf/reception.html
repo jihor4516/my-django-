@@ -1,0 +1,75 @@
+{% load i18n %}
+<!doctype html>
+<html lang="{{ doc.language|default:'ar' }}" dir="{% if doc.language == 'ar' or doc.language == 'ber' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <title>{% trans "Receiving Voucher" %} {{ doc.doc_number }}</title>
+  <style>
+    @page { size: A4; margin: 16mm; }
+    body { font-family: "Noto Naskh Arabic", "DM Sans", Arial, sans-serif; color: #202126; font-size: 12px; }
+    .doc-header { border-bottom: 2px solid #b8954a; padding-bottom: 8px; margin-bottom: 12px; }
+    .title { font-size: 20px; margin: 0; }
+    .meta { float: right; text-align: right; font-size: 11px; }
+    .rtl .meta { float: left; text-align: left; }
+    .box { border: 1px solid #d7d7d7; border-radius: 6px; padding: 8px; margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #d6d6d6; padding: 6px; text-align: center; }
+    th { background: #f5edd8; }
+    .signatures { margin-top: 22px; display: table; width: 100%; table-layout: fixed; }
+    .signatures > div { display: table-cell; text-align: center; padding-top: 26px; border-top: 1px solid #777; }
+    .footer { margin-top: 12px; font-size: 10px; color: #666; border-top: 1px solid #ddd; padding-top: 6px; }
+  </style>
+</head>
+<body class="{% if doc.language == 'ar' or doc.language == 'ber' %}rtl{% else %}ltr{% endif %}">
+  <div class="doc-header">
+    <div class="meta">
+      <div><strong>{{ doc.doc_number }}</strong></div>
+      <div>{% trans "Date" %}: {{ doc.created_at|date:"Y-m-d" }}</div>
+    </div>
+    <h1 class="title">{% trans "Receiving Voucher" %}</h1>
+    <div>{{ system_settings.theatre_legal_name|default:"Grand Theatre of Rabat" }}</div>
+  </div>
+
+  <div class="box">
+    <strong>{% trans "Received From" %}:</strong> {{ doc.external_name }}<br>
+    <strong>{% trans "Contact" %}:</strong> {{ doc.external_contact }}
+  </div>
+
+  <div class="box"><strong>{% trans "Purpose" %}:</strong> {{ doc.purpose }}</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>{% trans "Item" %}</th>
+        <th>{% trans "Serial" %}</th>
+        <th>{% trans "Qty" %}</th>
+        <th>{% trans "Condition / Notes" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for doc_item in doc.documentitem_set.all %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ doc_item.item.name_ar|default:doc_item.item.name_en }}</td>
+        <td>{{ doc_item.item.serial_number }}</td>
+        <td>{{ doc_item.quantity }}</td>
+        <td>{{ doc_item.notes|default:"-" }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5">{% trans "No items." %}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="signatures">
+    <div>{% trans "Delivered By" %}</div>
+    <div>{% trans "Received By" %}</div>
+  </div>
+
+  <div class="footer">
+    {{ system_settings.theatre_legal_name|default:"Grand Theatre of Rabat" }}
+    {% if system_settings.legal_footer_text %}<br>{{ system_settings.legal_footer_text }}{% endif %}
+  </div>
+</body>
+</html>

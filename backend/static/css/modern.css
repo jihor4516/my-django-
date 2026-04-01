@@ -1,0 +1,8 @@
+.glass-card{background:rgba(28,28,53,.7);backdrop-filter:blur(20px);border:1px solid rgba(200,169,110,.25);border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.nav-glass{background:rgba(10,10,24,.85)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--night-border)!important}
+.btn-gold{padding:12px 28px;background:linear-gradient(135deg,var(--gold-primary),var(--gold-dark));border:none;border-radius:10px;color:var(--night);font-weight:700;box-shadow:0 4px 20px rgba(200,169,110,.3)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(200,169,110,.4)}
+.auth-title{color:var(--gold-primary);font-weight:700;margin-bottom:8px}
+.auth-sub{color:var(--text-muted);font-size:12px;margin-bottom:16px}
+.form-modern .form-control{background:rgba(10,10,24,.6);border:1px solid var(--night-border);border-radius:10px;color:var(--white-warm);padding:12px}
+.form-modern .form-control:focus{border-color:var(--gold-primary);box-shadow:0 0 0 3px rgba(200,169,110,.25)}

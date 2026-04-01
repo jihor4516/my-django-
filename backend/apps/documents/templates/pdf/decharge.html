@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>DECHARGE {{ doc.doc_number }}</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+    body {
+      margin: 0;
+      font-family: "DejaVu Sans", Arial, sans-serif;
+      font-size: 11px;
+      color: #1f1f1f;
+    }
+    .sheet {
+      border: 1px solid #5e5e5e;
+      padding: 10px 10px 8px;
+      min-height: 270mm;
+    }
+    .row {
+      width: 100%;
+      clear: both;
+    }
+    .left { float: left; }
+    .right { float: right; }
+    .logo {
+      width: 95px;
+      height: 34px;
+      border: 1px solid #7c7c7c;
+      border-radius: 18px;
+      text-align: center;
+      font-size: 8px;
+      line-height: 1.25;
+      padding-top: 6px;
+    }
+    .org-meta {
+      text-align: right;
+      font-size: 9px;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+    .center-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 10px 0 8px;
+      text-transform: uppercase;
+    }
+    .doc-meta {
+      text-align: right;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+    .identity {
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+    .id-row {
+      margin-bottom: 2px;
+      white-space: nowrap;
+    }
+    .id-label {
+      display: inline-block;
+      width: 126px;
+      font-weight: 600;
+    }
+    .id-line {
+      display: inline-block;
+      width: 430px;
+      border-bottom: 1px solid #7d7d7d;
+      min-height: 16px;
+      padding-left: 6px;
+      vertical-align: bottom;
+    }
+    .borrow-line {
+      margin: 7px 0 8px;
+      white-space: nowrap;
+    }
+    .short-line {
+      display: inline-block;
+      width: 185px;
+      border-bottom: 1px solid #7d7d7d;
+      min-height: 15px;
+      padding-left: 5px;
+      vertical-align: bottom;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 3px;
+    }
+    th, td {
+      border: 1px solid #5d5d5d;
+      padding: 4px 5px;
+      vertical-align: top;
+      height: 20px;
+    }
+    th {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      height: 26px;
+    }
+    .col-n { width: 42px; text-align: center; }
+    .col-des { width: 46%; }
+    .col-qty { width: 95px; text-align: center; }
+    .col-obs { width: 31%; }
+    .footer-sign {
+      margin-top: 22px;
+      width: 100%;
+    }
+    .footer-sign .date {
+      float: right;
+      font-size: 13px;
+      margin-bottom: 38px;
+    }
+    .sign-row {
+      clear: both;
+      margin-top: 38px;
+      width: 100%;
+    }
+    .sign-col {
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: 12px;
+    }
+    .sign-label {
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .sign-name {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #454545;
+    }
+    .bottom-line {
+      clear: both;
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 4px;
+      border-top: 1px solid #777;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="row">
+      <div class="left logo">
+        {{ system_settings.theatre_legal_name|default:"THEATRE" }}<br>
+        DE RABAT
+      </div>
+      <div class="right org-meta">
+        ROYAUME DU MAROC<br>
+        MINISTERE JEUNESSE ET CULTURE
+      </div>
+    </div>
+
+    <div class="center-title">DECHARGE</div>
+
+    <div class="doc-meta">Annee/Num : {{ doc.created_at|date:"Y" }}/{{ doc.doc_number }}</div>
+
+    <div class="identity">
+      <div class="id-row"><span class="id-label">Nom et Prenom :</span><span class="id-line">{{ doc.external_name|default:"" }}</span></div>
+      <div class="id-row"><span class="id-label">CIN :</span><span class="id-line">{{ doc.notes|default:"" }}</span></div>
+      <div class="id-row"><span class="id-label">Etablissement :</span><span class="id-line">{{ doc.purpose|default:"" }}</span></div>
+      <div class="id-row"><span class="id-label">Adresse :</span><span class="id-line">&nbsp;</span></div>
+      <div class="id-row"><span class="id-label">Tel :</span><span class="id-line">{{ doc.external_contact|default:"" }}</span></div>
+      <div class="id-row"><span class="id-label">Gsm :</span><span class="id-line">{{ doc.external_contact|default:"" }}</span></div>
+      <div class="id-row"><span class="id-label">Email :</span><span class="id-line">&nbsp;</span></div>
+    </div>
+
+    <div class="borrow-line">
+      Avoir emprunte du service <span class="short-line">{{ doc.purpose|truncatechars:28 }}</span>
+      les articles suivants :
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="col-n">N&deg;</th>
+          <th class="col-des">Designation</th>
+          <th class="col-qty">Nombre</th>
+          <th class="col-obs">Observations</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for doc_item in doc.documentitem_set.all %}
+        <tr>
+          <td class="col-n">{{ forloop.counter }}</td>
+          <td class="col-des">{{ doc_item.item.name_fr|default:doc_item.item.name_en }} ({{ doc_item.item.serial_number }})</td>
+          <td class="col-qty">{{ doc_item.quantity }}</td>
+          <td class="col-obs">{{ doc_item.notes|default:"" }}</td>
+        </tr>
+        {% endfor %}
+        {% if doc.documentitem_set.count < 10 %}
+          {% for _ in "1234567890"|make_list %}
+            {% if forloop.counter > doc.documentitem_set.count %}
+            <tr>
+              <td class="col-n">&nbsp;</td>
+              <td class="col-des">&nbsp;</td>
+              <td class="col-qty">&nbsp;</td>
+              <td class="col-obs">&nbsp;</td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+
+    <div class="footer-sign">
+      <div class="date">Date : {{ doc.created_at|date:"d/m/Y" }}</div>
+
+      <div class="sign-row">
+        <div class="sign-col">
+          <div class="sign-label">Responsable de service</div>
+          <div class="sign-name">{{ system_settings.theatre_legal_name|default:"THEATRE" }}</div>
+        </div>
+        <div class="sign-col">
+          <div class="sign-label">Signature :</div>
+          <div class="sign-name">{{ doc.external_name|default:"Beneficiaire" }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-line">THEATRE MOHAMMED V</div>
+  </div>
+</body>
+</html>

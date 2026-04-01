@@ -1,0 +1,22 @@
+.kpi-card{
+  background:var(--night-card);
+  border:1px solid var(--night-border);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 0 30px rgba(200,169,110,.12);
+}
+.kpi-title{ color:var(--text-muted); font-size:14px }
+.kpi-value{ color:var(--white-warm); font-size:24px; font-weight:700 }
+.kpi-sub{ color:var(--text-muted); font-size:12px }
+.dashboard-layout{display:flex;min-height:calc(100vh - 80px)}
+.sidebar{width:220px;background:rgba(20,20,40,.95);border-left:1px solid var(--night-border);padding:20px 0;flex-shrink:0;position:sticky;top:80px;height:calc(100vh - 80px);overflow-y:auto}
+.sidebar-section{padding:0 12px;margin-bottom:4px}
+.sidebar-label{font-size:10px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;padding:12px 12px 6px;display:block}
+.sidebar-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:12px;color:var(--text-muted);transition:all .2s;margin-bottom:2px;border:1px solid transparent}
+.sidebar-item:hover{background:rgba(200,169,110,.08);color:var(--gold)}
+.sidebar-item.active{background:rgba(200,169,110,.12);color:var(--gold);border-color:rgba(200,169,110,.2)}
+.sidebar-icon{font-size:14px;width:18px;text-align:center}
+.main-content{flex:1;padding:28px 24px;background:var(--night-mid)}
+.page-header{margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+.page-title{font-size:22px;color:var(--white-warm);font-weight:700}
+.page-subtitle{font-size:12px;color:var(--text-muted)}
