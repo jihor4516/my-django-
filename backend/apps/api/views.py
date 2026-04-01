@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import timedelta
 from decimal import Decimal, InvalidOperation
 
@@ -9,7 +10,7 @@ from django.conf import settings
 from django.db import transaction
 from django.urls import reverse
 from django.core.paginator import Paginator
-from django.http import JsonResponse
+from django.http import FileResponse, Http404, JsonResponse
 from django.db.models import Max, Q
 from django.utils import timezone
 from django.utils.text import slugify
@@ -1113,3 +1114,18 @@ def staff_notifications_create(request):
     ]
     Notification.objects.bulk_create(created)
     return JsonResponse({'detail': f'Notification sent to {len(created)} recipient(s).'})
+
+
+@require_GET
+def download_report(request):
+    """Serve the project academic report PDF as a downloadable file."""
+    pdf_path = os.path.join(settings.BASE_DIR, '..', 'تقرير_مشروع_المسرح_الكبير.pdf')
+    pdf_path = os.path.normpath(pdf_path)
+    if not os.path.isfile(pdf_path):
+        raise Http404("ملف التقرير غير موجود.")
+    response = FileResponse(
+        open(pdf_path, 'rb'),
+        content_type='application/pdf',
+    )
+    response['Content-Disposition'] = 'attachment; filename="تقرير_مشروع_المسرح_الكبير.pdf"'
+    return response

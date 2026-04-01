@@ -31,4 +31,5 @@ urlpatterns = [
     path('staff/items/', views.staff_items_list_create, name='staff-items-list-create'),
     path('staff/items/<int:pk>/', views.staff_items_update, name='staff-items-update'),
     path('staff/items/<int:pk>/images/', views.staff_item_image_upload, name='staff-item-image-upload'),
+    path('download-report/', views.download_report, name='download-report'),
 ]
